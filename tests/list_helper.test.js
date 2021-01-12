@@ -44,4 +44,12 @@ describe("total likes", () => {
       likes: 12,
     });
   });
+
+  test("Author have the most blogs", () => {
+    listHelper.mostBlogs(blogs);
+  });
+
+  test("Author have the most likes", () => {
+    listHelper.mostLikes(blogs);
+  });
 });
