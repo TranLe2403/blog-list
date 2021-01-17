@@ -33,7 +33,9 @@ const mostBlogs = (blogArray) => {
     });
   });
 
-  const authorObjects = _.values(_.groupBy(authorArray)).map((item) => ({
+  const groupedAuthor = _.groupBy(authorArray);
+
+  const authorObjects = _.values(groupedAuthor).map((item) => ({
     author: item[0],
     blogs: item.length,
   }));

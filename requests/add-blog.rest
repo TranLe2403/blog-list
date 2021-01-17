@@ -1,9 +1,11 @@
-POST  http://localhost:3003/api/blogs
+POST  http://localhost:3000/api/blogs
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRyYW5sZWxlMiIsImlkIjoiNjAwMjMyZTdlZTU5NWZiZmJhOTgzOTcwIiwiaWF0IjoxNjEwNzU2ODU3fQ.Kk8noOsCHD0m84W_mFfHYqvbFk4CLrrNQ-gQpvwoTHo
 
 {
-    "title": "test",
-    "author": "abc",
-    "url": "abc.com",
-    "number": 3
+     "title": "test users",
+     "author": "tranle",
+     "url": "dfbf.sdfsd",
+     "likes": 5,
+    "user": "600232e7ee595fbfba983970"
 }
