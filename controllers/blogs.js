@@ -17,18 +17,18 @@ blogsRouter.post("/", async (request, response) => {
   }
   const user = await User.findById(decodedToken.id);
 
-  if (!blog.likes) {
-    blog = new Blog({
-      title: request.body.title,
-      author: request.body.author,
-      url: request.body.url,
-      likes: 0,
-      user: user._id,
-    });
-  } else if (!blog.url || !blog.title) {
+  if (!blog.url || !blog.title) {
     response.status(400).end();
     return;
   }
+
+  blog = new Blog({
+    title: request.body.title,
+    author: request.body.author,
+    url: request.body.url,
+    likes: request.body.likes ? request.body.likes : 0,
+    user: user._id,
+  });
 
   const blogSaved = await blog.save();
   const populatedBlogSaved = await Blog.findById(blogSaved._id).populate(
